@@ -5,7 +5,7 @@ import FormikOnboardingForm from './components/Form';
 
 function App() {
   return (
-    <div className="App">
+    <div className="app-container">
       <FormikOnboardingForm />
     </div>
   );

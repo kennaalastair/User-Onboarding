@@ -47,9 +47,9 @@ const OnboardingForm = ({ errors, touched, values, handleSubmit, status }) => {
 
             {users.map(user => (
                 <div className="user-card">
-                    <p key={user.id}>{user.name}</p>
-                    <p>{user.email}</p>
-                    <p>{user.role}</p>
+                    <p key={user.id}>Name: {user.name}</p>
+                    <p>Email: {user.email}</p>
+                    <p>Role: {user.role}</p>
                 </div>
             ))}
         </div>
