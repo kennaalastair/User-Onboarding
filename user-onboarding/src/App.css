@@ -1,0 +1,30 @@
+.user-form {
+    padding: 25px;
+}
+
+input {
+    margin-right: 5px;
+}
+
+p.error {
+    font-size: 12px;
+}
+
+.checkbox-container {
+    display: block;
+    margin-top: 10px;
+}
+
+button {
+    margin-top: 10px;
+}
+
+.user-card {
+    width: 300px;
+    height: auto;
+    padding: 25px;
+    margin-top: 25px;
+    background-color: papayawhip;
+    font-size: 14px;
+}
+
