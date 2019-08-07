@@ -1,6 +1,8 @@
 .app-container {
     display: flex;
     justify-content: center;
+    height: 100vh;
+    background-image: linear-gradient(to bottom right, #832f83, #f1daf1);
 }
 
 .user-form {
@@ -31,5 +33,7 @@ button {
     margin-top: 25px;
     background-color: plum;
     font-size: 14px;
+    border: 1px solid #832f83;
+    border-radius: 10px;
 }
 
