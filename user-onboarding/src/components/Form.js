@@ -29,6 +29,13 @@ const OnboardingForm = ({ errors, touched, values, handleSubmit, status }) => {
                 {touched.password && errors.password && (<p className="error">{errors.password}</p>
                 )}
 
+                <Field component="select" className="role-select" name="role">
+                    <option>Please Choose a Role</option>
+                    <option value="Student">Student</option>
+                    <option value="Teacher">Teacher</option>
+                    <option value="Aid">Aid</option>
+                </Field>
+
                 <label className="checkbox-container">
                     Terms of Service
                     <Field type="checkbox" name="terms" checked={values.terms} />
@@ -42,6 +49,7 @@ const OnboardingForm = ({ errors, touched, values, handleSubmit, status }) => {
                 <div className="user-card">
                     <p key={user.id}>{user.name}</p>
                     <p>{user.email}</p>
+                    <p>{user.role}</p>
                 </div>
             ))}
         </div>
@@ -49,11 +57,12 @@ const OnboardingForm = ({ errors, touched, values, handleSubmit, status }) => {
 };
 
 const FormikOnboardingForm = withFormik({
-    mapPropsToValues({ name, email, password, terms }) {
+    mapPropsToValues({ name, email, password, role, terms }) {
         return {
             name: name || "",
             email: email || "",
             password: password || "",
+            role: role,
             terms: terms || false
         };
     },
@@ -62,7 +71,8 @@ const FormikOnboardingForm = withFormik({
         name: Yup.string().required("Name required"),
         email: Yup.string().required("Email required"),
         password: Yup.string().min(6).required("Password much be at least 6 characters long"),
-        terms: Yup.string().required()
+        // role: Yup.array().required(),
+        terms: Yup.bool().oneOf([true], "Must select terms")
     }),
 
     handleSubmit(values, { setStatus }) {
